@@ -4,6 +4,7 @@ exports.render = function(req, res){
 		'title':'Hello World',	
 		'message': 'How are things !!',
 		'youAreUsingJade': true,
+		'isLoggedIn': false,
 		'foo':1,
 	});
 };

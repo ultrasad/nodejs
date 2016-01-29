@@ -3,6 +3,8 @@ var morgan = require('morgan');
 var compression = require('compression');
 var bodyParser = require('body-parser');
 
+var sass = require('node-sass-middleware');
+
 module.exports = function(){
 	var app = express();
 	if(process.env.NODE_ENV === 'development'){
@@ -10,7 +12,7 @@ module.exports = function(){
 	} else {
 		app.use(compression());
 	}
-	app.use(bodyParser.urlencoded({
+	app.use(bodyParser.urlencoded({ //support url encode
 		extended: true
 	}));
 	app.use(bodyParser.json()); //support json too.
@@ -21,6 +23,16 @@ module.exports = function(){
 
 	//app path, compile time
 	require('../app/routes/index.routes')(app); //return function in index.routes and (app) is params
+	require('../app/routes/user.routes')(app); //user
+
+	app.use(sass({
+			src: './sass',
+			dest: './public/css',
+			outputStyle: 'compressed', //compressed, compact, expanded
+			prefix: '/css',
+			debug: true,
+			//indentedSyntax: true, //for .sass file, indent css style
+	}));
 
 	//public file, put after routing
 	app.use(express.static('./public'));

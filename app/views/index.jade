@@ -25,7 +25,7 @@ html(lang="en")
 				//alert('NodeJS Alert Onload.');
 			}
 	body(onload="alertText();")
-		h1=message
+		//h1=message
 		h2 Jade - node template engine
 		img(src='/img/index.png', alt='Logo NodeJS')
 		#container.col
@@ -38,3 +38,20 @@ html(lang="en")
 				templating language with a
 				strong focus on performance
 				and powerful features.
+
+	if isLoggedIn
+		//h3 You are Logged in.
+		h3=title
+		form(name='logout', method='post', action='logout')
+			div
+				input(type='submit', value='Logout')
+	else
+		form(name='login', method='post', action='login')
+			div
+				label(for='email') Email
+				input(type='email', name='email' placeholder='youremail@email.com')
+			div
+				label(for='password') Password
+				input(type='password', name='password' placeholder='password')
+			div
+				input(type='submit', value='Login')

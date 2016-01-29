@@ -9,6 +9,7 @@
     "express": "^4.13.4",
     "jade": "^1.11.0",
     "morgan": "^1.6.1",
+    "node-sass-middleware": "^0.9.7",
     "npm": "^3.3.12"
   },
   "devDependencies": {},
