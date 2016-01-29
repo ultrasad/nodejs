@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+	head
+		title=title
+		link(href='/css/main.css', rel='stylesheet')
+		script(src='/js/onload.js', type='text/javascript')
+		script(type="text/javascript").
+			var foo=true;
+			window.onload
+			function bar(add)
+			{
+				//console.log('add => ' + add);
+				return (add);
+			}
+			if(foo){
+				var response = bar(1+5);
+				console.log(response);
+				console.log('response ok.');
+			} else {
+				console.log('not foo.');
+			}
+
+			function alertText()
+			{
+				//alert('NodeJS Alert Onload.');
+			}
+	body(onload="alertText();")
+		h1=message
+		h2 Jade - node template engine
+		img(src='/img/index.png', alt='Logo NodeJS')
+		#container.col
+			if youAreUsingJade
+				p You are amazing
+			else
+				p Get on it!
+			p.
+				Jade is a terse and simple
+				templating language with a
+				strong focus on performance
+				and powerful features.

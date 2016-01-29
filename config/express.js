@@ -14,6 +14,16 @@ module.exports = function(){
 		extended: true
 	}));
 	app.use(bodyParser.json()); //support json too.
+
+	//view path, run time on server.js
+	app.set('views', './app/views');
+	app.set('view engine', 'jade');
+
+	//app path, compile time
 	require('../app/routes/index.routes')(app); //return function in index.routes and (app) is params
+
+	//public file, put after routing
+	app.use(express.static('./public'));
+
 	return app;
 };
