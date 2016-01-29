@@ -1,7 +1,7 @@
 exports.render = function(req, res){
 	//res.send('Hello World'); //no template
 	res.render('index', {
-		'title':'Hello World',	
+		'title':'Welcome.',	
 		'message': 'How are things !!',
 		'youAreUsingJade': true,
 		'isLoggedIn': false,
