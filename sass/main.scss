@@ -1,5 +1,6 @@
 $primary-color: #09f;
 $second-color: #095;
+$label-color: #333;
 
 
 h1 {
@@ -20,4 +21,16 @@ h4 {
 
 h5 {
 	color: $second-color;
+}
+
+h6 {
+	color: $second-color;
+}
+
+span {
+	color: $primary-color;
+}
+
+label {
+	color: $label-color;
 }

@@ -2,6 +2,7 @@ module.exports = function(app){
 	var index = require('../controllers/index.controller'); //index => indexController exports
 	app.get('/', index.render);
 	app.get('/test', index.test);
+	app.get('/welcome', index.welcome);
 	
 	/*
 	app.post('/', index.render);

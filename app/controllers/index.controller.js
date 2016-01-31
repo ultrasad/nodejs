@@ -9,6 +9,10 @@ exports.render = function(req, res){
 	});
 };
 
-exports.test = function(req, res){
+exports.test = function(req, res){ //routes test
 	res.send('Hello Test');
+};
+
+exports.welcome = function(req, res){ //routes welcome
+	res.send('Welcome');
 };
