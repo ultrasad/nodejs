@@ -1,3 +1,16 @@
+var User = require('mongoose').model('User'); //call module mongoose, User model
+
+exports.create = function(req, res, next){
+	var user = new User(req.body);
+	user.save(function(err){
+		if(err){
+			return next(err); //send err to next middleware
+		} else {
+			return res.json(user); //return json user
+		}
+	});
+};
+
 exports.login = function(req, res){
 	console.log(req.body);
 	console.log('Email: ' + req.body.email); //body parser req.body

@@ -6,7 +6,7 @@ var express = require('./config/express'); //module.exports
 var uri = 'mongodb://localhost:27017';
 var db = mongoose.connect(uri);*/
 
-var db = mongoose;
+var db = mongoose(); //load first, db
 var app = express(); //new express()
 app.listen(3000);
 module.exports = app;
