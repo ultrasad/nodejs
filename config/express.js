@@ -5,6 +5,16 @@ var bodyParser = require('body-parser');
 
 var sass = require('node-sass-middleware');
 
+//config file, dev or prod
+var config = require('./config'); //for session secret key
+
+/* move to config
+//var config = require('./config');
+//var mongoose = require('mongoose');
+//var uri = 'mongodb://localhost:27017'; //move to config js
+//var db = mongoose.connect(uri);
+*/
+
 module.exports = function(){
 	var app = express();
 	if(process.env.NODE_ENV === 'development'){
